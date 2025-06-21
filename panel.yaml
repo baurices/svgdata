@@ -1,0 +1,71 @@
+
+---
+
+#------------------------------------------------------------------------------
+# YAML Aliases to simplify maintenance
+
+anchorLinks:
+  - threshold: &threshold_dump
+    - {color: "semi-dark-green", level: 0}
+    - {color: "orange", level: 10}
+    - {color: "red", level: 15}
+  - threshold: &threshold_other
+    - {color: "gray", level: 0}
+    - {color: "semi-dark-green", level: 1}
+
+#------------------------------------------------------------------------------
+# Highlighting
+
+tagConfig:
+  legend: ["Queue Technology:", "rabbitMQ", "kafka", "|", "Flow Attribs:", "inflow", "depth", "latency", "active", "|"]
+  color: "yellow"
+  highlightRgbFactor: 5.0
+  lowlightAlphaFactor: 0.3
+
+#------------------------------------------------------------------------------
+# Panel Config
+
+cellIdPreamble: "cell-"
+gradientMode: "hue"
+
+cells:
+  #----------------------------------------------------------------------------
+  db_export_done:
+    dataRef: "title"
+    label:
+      separator: "replace"
+      units: "none"
+    tags: ["inflow", "rabbitMQ"]
+  db_export_zip:
+    dataRef: "test-data-large-cos"
+    label:
+      separator: "colon"
+      units: "short"
+    labelColor:
+      thresholds: *threshold_depth
+    tags: ["depth", "rabbitMQ"]
+  db_export_ftp:
+    dataRef: "test-data-small-sin"
+    label:
+      separator: "colon"
+      units: "s"
+    labelColor:
+      thresholds: *threshold_latency
+    tags: ["latency", "rabbitMQ"]
+  db_export_receive:
+    dataRef: "test-data-large-cos"
+    label:
+      separator: "colon"
+      units: "short"
+    labelColor:
+      thresholds: *threshold_active
+    tags: ["active", "rabbitMQ"]
+  db_export_imported:
+    dataRef: "test-data-large-cos"
+    label:
+      separator: "colon"
+      units: "short"
+    labelColor:
+      thresholds: *threshold_active
+    tags: ["active", "rabbitMQ"]
+ 
