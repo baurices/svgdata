@@ -26,6 +26,7 @@ tagConfig:
 # Panel Config
 
 gradientMode: "hue"
+cellIdPreamble: "cell-"
 
 cells:
   #----------------------------------------------------------------------------
