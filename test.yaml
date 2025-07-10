@@ -1,3 +1,4 @@
+cellIdPreamble: "cell-"
 cells: 
   FR_NKP4_AS_XPL_Q_001_DEBUT_CHAINE_NSKEP:
     dataRef: "FR_NKP4_AS_XPL_Q_001_DEBUT_CHAINE_NSKEP"
