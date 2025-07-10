@@ -1,0 +1,10 @@
+cells: 
+  FR_NKP4_AS_XPL_Q_001_DEBUT_CHAINE_NSKEP:
+    dataRef: "FR_NKP4_AS_XPL_Q_001_DEBUT_CHAINE_NSKEP"
+    fillColor:
+      thresholdPatterns:
+        queuecount:
+          - {color: "green", pattern: '.*TN.*', order: null}
+          - {color: "amber", pattern: '.*TX.*', order: null}
+          - {color: "red", pattern: '.*TA.*', order: null}
+          - {color: "gray", pattern: '.*', order: null}
